@@ -1,0 +1,20 @@
+.portrait {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	}
+.portrait svg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	}
+.portrait_head {
+	// opacity: 0;
+	}
+
+rect:not(.expNone) {
+	fill: url(#img1);
+	}

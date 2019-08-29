@@ -1,0 +1,109 @@
+#boop {
+	position: absolute;
+	top: 50%; left: 50%; 
+	width:40px;
+	height:40px;
+	pointer-events: none;
+	z-index: 9;
+	}
+
+.blah {
+	animation: blah .3s forwards;
+
+	transform-origin: 50% 50%;
+	transform: rotate(45deg);
+	}
+.blah .sq {
+	height: 10px;
+	width: 10px;
+	background-color: rgba(0, 255, 255, 0.741);
+	// mix-blend-mode: overlay;
+	position: absolute;
+
+	animation: sq .5s forwards;
+	}
+
+.sq:nth-child(1) {
+	left: -20%; top: 10%;
+	}
+.sq:nth-child(2) {
+	left: -5%; top: 20%;
+	animation-delay: .1s;
+	}
+.sq:nth-child(3) {
+	left: 10%; top: 30%;
+	}
+.sq:nth-child(4) {
+	left: -10%; top: 60%;
+	animation-delay: .1s;
+	}
+.sq:nth-child(5) {
+	left: 25%; top: 25%;
+	}
+.sq:nth-child(6) {
+	left: 40%; bottom: -10%;
+	}
+.sq:nth-child(7) {
+	right: 10%; bottom: 15%;
+	}
+.sq:nth-child(8) {
+	right: -10%; bottom: -10%;
+	animation-delay: .1s;
+	}
+.sq:nth-child(9) {
+	right: 10%; top: 15%;
+	}
+.sq:nth-child(10) {
+	left: 30%; top: -10%;
+	}
+.sq:nth-child(11) {
+	right: 20%; top: 5%;
+	}
+.sq:nth-child(12) {
+	right: -15%; top: -15%;
+	animation-delay: .1s;
+	}
+.sq:nth-child(13) {
+	right: -15%; top: 40%;
+	}
+.sq:nth-child(14) {
+	left: 10%; top: -20%;
+	}
+.sq:nth-child(15) {
+	left: 10%; bottom: -15%;
+	animation-delay: .1s;
+	}
+
+@keyframes blah {
+	0% {
+		background-color: hsla(208, 100%, 59%, 1);
+		transform: scale(0,0) rotate(45deg);
+		height: 0; width: 0;
+		box-shadow: 0 0 10px aqua;
+		}
+	50% {
+		background-color: rgb(76, 254, 183);
+		height: 40px; width: 40px;
+		box-shadow: 0 0 10px aqua;
+		}
+	100% {
+		background-color: transparent;
+		transform: scale(1,1) rotate(45deg);
+		box-shadow: 0 0 10px transparent;
+		}
+	}
+@keyframes sq {
+	0% {
+		transform: scale(0, 0);
+		opacity: 0;
+		background-color: rgba(0, 255, 255, 0.741);
+		}
+	50% {
+		opacity: 1;
+		background-color: rgba(228, 255, 255, 0.741);
+		}
+	100% {
+		transform: scale(1, 1);
+		opacity: 0;
+		}
+	}
