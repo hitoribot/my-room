@@ -115,19 +115,32 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
+// check image load
+var img = document.querySelector('image')
+var aud = document.querySelector('audio')
+
+
 refreshDialogueBox.addEventListener("click", function() {
 	let randomNo = getRandomInt(dialoguesLength);
 	let dialogueText = dialogues[randomNo].text;
 	let expressions = dialogues[randomNo].expressionList;
 	let audioFile = "audio/arjuna/" + dialogues[randomNo].audio;
-	voice.pause();
-	voice.currentTime = 0;
-	voice.setAttribute("src", audioFile);
-	voice.play();
-	dialogueText.reset();
-	dialogueText.go();	
-	for (var i=0; i<timeouts.length; i++) {
-		clearTimeout(timeouts[i]);
+	
+	if (img.complete && aud.complete) {
+		voice.pause();
+		voice.currentTime = 0;
+		voice.setAttribute("src", audioFile);
+		voice.play();
+		dialogueText.reset();
+		dialogueText.go();	
+		for (var i=0; i<timeouts.length; i++) {
+			clearTimeout(timeouts[i]);
+		}
+		expressions();
+	} else {
+	img.addEventListener('load', loaded)
+	img.addEventListener('error', function() {
+		alert('error')
+	})
 	}
-	expressions();
 });
