@@ -125,8 +125,8 @@ refreshDialogueBox.addEventListener("click", function() {
 	let dialogueText = dialogues[randomNo].text;
 	let expressions = dialogues[randomNo].expressionList;
 	let audioFile = "audio/arjuna/" + dialogues[randomNo].audio;
-	
-	if (img.complete && aud.complete) {
+
+	if (aud.complete) {
 		voice.pause();
 		voice.currentTime = 0;
 		voice.setAttribute("src", audioFile);
@@ -137,10 +137,5 @@ refreshDialogueBox.addEventListener("click", function() {
 			clearTimeout(timeouts[i]);
 		}
 		expressions();
-	} else {
-	img.addEventListener('load', loaded)
-	img.addEventListener('error', function() {
-		alert('error')
-	})
 	}
 });
