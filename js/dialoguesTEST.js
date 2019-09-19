@@ -122,15 +122,17 @@ refreshDialogueBox.addEventListener("click", function() {
 	let expressions = dialogues[randomNo].expressionList;
 	let audioFile = "audio/arjuna/" + dialogues[randomNo].audio;
 	
-	voice.pause();
-	voice.currentTime = 0;
-	voice.setAttribute("src", audioFile);
-	voice.play();
-	dialogueText.reset();
-	dialogueText.go();	
-	for (var i=0; i<timeouts.length; i++) {
-		clearTimeout(timeouts[i]);
+	if (voice.complete) {
+		voice.pause();
+		voice.currentTime = 0;
+		voice.setAttribute("src", audioFile);
+		voice.play();
+		dialogueText.reset();
+		dialogueText.go();	
+		for (var i=0; i<timeouts.length; i++) {
+			clearTimeout(timeouts[i]);
+		}
+		
+		expressions();
 	}
-	
-	expressions();
 });
