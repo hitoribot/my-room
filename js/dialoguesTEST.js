@@ -123,15 +123,15 @@ refreshDialogueBox.addEventListener("click", function() {
 	let expressions = dialogues[randomNo].expressionList;
 	let audioFile = "audio/arjuna/" + dialogues[randomNo].audio;
 	
-	loadIndic.classList.add(".active");
+	loadIndic.classList.add("active");
 	
 	voice.pause();
 	voice.currentTime = 0;
 	voice.setAttribute("src", audioFile);
 
-	// https://stackoverflow.com/a/58180549/604040
+	// https://stackoverflow.com/a/58180549/604040'
 	voice.addEventListener("loadeddata", function() {		
-		loadIndic.classList.remove(".active");
+		loadIndic.classList.remove("active");
 
 		voice.play();
 		dialogueText.reset();
