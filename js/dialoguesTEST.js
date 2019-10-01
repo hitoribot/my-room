@@ -118,7 +118,7 @@ function getRandomInt(max) {
 }
 
 
-myroom.addEventListener("click", function() {
+myroom.addEventListener("click", function() { 
 	let randomNo = getRandomInt(dialoguesLength);
 	let dialogueText = dialogues[randomNo].text;
 	let expressions = dialogues[randomNo].expressionList;
