@@ -109,6 +109,7 @@ var voice = document.querySelector("audio");
 voice.volume = 0.05;
 var dialoguesLength = dialogues.length;
 var expression = document.querySelector(".mlap");
+var loadIndic = document.querySelector(".loading-indicator");
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getRandomInt(max) {
@@ -122,17 +123,25 @@ refreshDialogueBox.addEventListener("click", function() {
 	let expressions = dialogues[randomNo].expressionList;
 	let audioFile = "audio/arjuna/" + dialogues[randomNo].audio;
 	
+	loadIndic.classList.add(".active");
+	
 	voice.pause();
 	voice.currentTime = 0;
 	voice.setAttribute("src", audioFile);
-	voice.play();
-	dialogueText.reset();
-	dialogueText.go();	
-	
-	// clearing all previous dialogue's timeouts, otherwise 
-	for (var i=0; i<timeouts.length; i++) {
-		clearTimeout(timeouts[i]);
-	}
-	
-	expressions();
+
+	// https://stackoverflow.com/a/58180549/604040
+	voice.addEventListener("loadeddata", function() {		
+		loadIndic.classList.remove(".active");
+
+		voice.play();
+		dialogueText.reset();
+		dialogueText.go();	
+		
+		// clearing all previous dialogue's timeouts, otherwise 
+		for (var i=0; i<timeouts.length; i++) {
+			clearTimeout(timeouts[i]);
+		}
+		
+		expressions();
+	});
 });
