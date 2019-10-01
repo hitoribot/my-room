@@ -1,7 +1,7 @@
 # FGO My Room
 My Room v0.0001a
 
-# Credits:
+## Credits:
 
 FGO assets: https://github.com/hitoribot/my-room/issues
 
