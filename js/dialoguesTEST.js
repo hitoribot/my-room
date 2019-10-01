@@ -124,6 +124,7 @@ refreshDialogueBox.addEventListener("click", function() {
 	let audioFile = "audio/arjuna/" + dialogues[randomNo].audio;
 	
 	loadIndic.classList.add("active");
+	dialogueText.reset();
 	
 	voice.pause();
 	voice.currentTime = 0;
