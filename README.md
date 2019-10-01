@@ -9,7 +9,7 @@ My Room v0.0001a
 
 ## Credits:
 
-FGO assets: https://github.com/hitoribot/my-room/issues
+FGO assets: https://www.reddit.com/r/grandorder/comments/9xfoxw/updated_fgo_assetsspritesbg/
 
 Character dialogue and voicelines: https://fategrandorder.fandom.com/
 
