@@ -5,6 +5,7 @@
 	opacity: 0;
 	pointer-events: none;
 	transition: .6s;
+	border-bottom: 3px solid black;
 
 	&.active {
 		opacity: 1;
@@ -14,8 +15,11 @@
 	span {		
 		position: absolute;
 		bottom: 0; right: 0; left: 0; right: 0;
-		background-color: #000;
+		background-color: rgba(0, 0, 0, 0.568);
+		text-align: right;
 		color: white;
 		padding: 5px;
+		text-transform: uppercase;
+		border-bottom: 2px solid white;
 		}
 	}
