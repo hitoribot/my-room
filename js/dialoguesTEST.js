@@ -103,6 +103,7 @@ var dialogues = [
 
 
 var refreshDialogueBox = document.querySelector(".dialogue-box");
+var myroom = document.querySelector("main");
 var dialogueBoxb = document.querySelector("#dialogues");
 var face = document.querySelector("rect");
 var voice = document.querySelector("audio");
@@ -117,7 +118,7 @@ function getRandomInt(max) {
 }
 
 
-refreshDialogueBox.addEventListener("click", function() {
+myroom.addEventListener("click", function() {
 	let randomNo = getRandomInt(dialoguesLength);
 	let dialogueText = dialogues[randomNo].text;
 	let expressions = dialogues[randomNo].expressionList;
