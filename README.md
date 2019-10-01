@@ -1,7 +1,7 @@
 # FGO My Room
 My Room v0.0001a
 
-## Status (In early testing stage)
+## Status (In early testing stage):
 * dialogues aren’t properly synched to voice/expression
 * not optimized for mobile or non-pc devices.
 * haven’t tested on iOS or Mac
