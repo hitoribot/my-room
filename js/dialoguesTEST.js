@@ -122,11 +122,6 @@ refreshDialogueBox.addEventListener("click", function() {
 	let dialogueText = dialogues[randomNo].text;
 	let expressions = dialogues[randomNo].expressionList;
 	let audioFile = "audio/arjuna/" + dialogues[randomNo].audio;
-		
-	// clearing all previous dialogue's timeouts, otherwise 
-	for (var i=0; i<timeouts.length; i++) {
-		clearTimeout(timeouts[i]);
-	}
 	
 	loadIndic.classList.add("active");
 	
@@ -140,8 +135,12 @@ refreshDialogueBox.addEventListener("click", function() {
 
 		voice.play();
 		dialogueText.reset();
-		dialogueText.go();	
+		dialogueText.go();			
 		
+		// clearing all previous dialogue's timeouts, otherwise 
+		for (var i=0; i<timeouts.length; i++) {
+			clearTimeout(timeouts[i]);
+		}
 		expressions();
 	});
 });
