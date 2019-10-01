@@ -127,6 +127,7 @@ refreshDialogueBox.addEventListener("click", function() {
 	for (var i=0; i<timeouts.length; i++) {
 		clearTimeout(timeouts[i]);
 	}
+	dialogueText.reset();
 	
 	loadIndic.classList.add("active");
 	
@@ -139,7 +140,6 @@ refreshDialogueBox.addEventListener("click", function() {
 		loadIndic.classList.remove("active");
 
 		voice.play();
-		dialogueText.reset();
 		dialogueText.go();	
 		
 		expressions();
