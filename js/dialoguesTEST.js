@@ -131,7 +131,7 @@ refreshDialogueBox.addEventListener("click", function() {
 	voice.setAttribute("src", audioFile);
 
 	// https://stackoverflow.com/a/58180549/604040'
-	voice.addEventListener("loadeddata", function() {		
+	voice.addEventListener("canplaythrough", function() {		
 		loadIndic.classList.remove("active");
 
 		voice.play();
